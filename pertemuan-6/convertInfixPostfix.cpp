@@ -4,7 +4,6 @@
 #include <cctype>
 using namespace std;
 
-// Menentukan prioritas operator
 int precedence(char op) {
     if (op == '^')
         return 3;
@@ -16,12 +15,10 @@ int precedence(char op) {
         return 0;
 }
 
-// Mengecek apakah karakter adalah operator
 bool isOperator(char c) {
     return (c == '+' || c == '-' || c == '*' || c == '/' || c == '^');
 }
 
-// Fungsi konversi infix ke postfix
 string infixToPostfix(string infix) {
     stack<char> st;
     string postfix = "";
@@ -65,13 +62,9 @@ string infixToPostfix(string infix) {
 
 int main() {
     string infix;
-
     cout << "Masukkan ekspresi infix: ";
     cin >> infix;
-
     string postfix = infixToPostfix(infix);
-
     cout << "Postfix: " << postfix << endl;
-
     return 0;
 }
